@@ -12,3 +12,9 @@ provider "aws" {
   region  = "us-east-1"
   profile = "iamadmin-general"
 }
+
+provider "aws" {
+  alias = "ohio"
+  region  = "us-east-2"
+  profile = "iamadmin-general"
+}

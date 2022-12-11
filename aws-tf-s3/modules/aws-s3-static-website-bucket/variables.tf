@@ -28,4 +28,3 @@ variable "accelerated_transfer" {
   type        = string
   default     = "Suspended"
 }
-
