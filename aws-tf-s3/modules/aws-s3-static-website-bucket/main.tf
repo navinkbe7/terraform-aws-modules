@@ -4,6 +4,20 @@ resource "aws_s3_bucket" "s3_bucket" {
   tags = var.tags
 }
 
+resource "aws_s3_bucket_versioning" "s3_bucket" {
+  bucket = aws_s3_bucket.s3_bucket.id
+
+  versioning_configuration {
+    status     = var.versioning
+    mfa_delete = var.mfa_delete
+  }
+}
+
+resource "aws_s3_bucket_accelerate_configuration" "s3_bucket" {
+  bucket = aws_s3_bucket.s3_bucket.bucket
+  status = var.accelerated_transfer
+}
+
 resource "aws_s3_bucket_website_configuration" "s3_bucket" {
   bucket = aws_s3_bucket.s3_bucket.id
 

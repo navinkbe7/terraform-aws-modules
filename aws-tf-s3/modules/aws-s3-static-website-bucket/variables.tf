@@ -10,3 +10,22 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "versioning" {
+  description = "Versioning state of the bucket"
+  type        = string
+  default     = "Disabled"
+}
+
+variable "mfa_delete" {
+  description = "Versioning state of the bucket"
+  type        = string
+  default     = "Disabled"
+}
+
+variable "accelerated_transfer" {
+  description = "Versioning state of the bucket"
+  type        = string
+  default     = "Suspended"
+}
+
